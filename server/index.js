@@ -9,7 +9,7 @@ const statRoute = require('./routes/fetch-statistics');
 const priceRoute = require('./routes/price-range-statistics');
 const categoryRoute = require('./routes/category-distribution');
 const transactionRoute = require('./routes/combine-data-route');
-
+const allTransactionRoute=require('./routes/alltransaction');
 const corsOptions = {
     origin: 'http://localhost:3000',
     methods:'POST,GET,PUT,DELETE,PATCH,HEAD',
@@ -25,6 +25,7 @@ app.use('/',statRoute);
 app.use('/',priceRoute);
 app.use('/',categoryRoute);
 app.use('/',transactionRoute);
+app.use('/',allTransactionRoute);
 
 connection().then(()=>{
     console.log("Your database connected");
